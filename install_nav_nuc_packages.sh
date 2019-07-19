@@ -16,6 +16,7 @@ sudo rosdep init
 rosdep update
 
 echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+echo "alias cm='cd ~/catkin_nav && catkin_make'" >> ~/.bashrc
 source ~/.bashrc
 
 sudo apt install -y python-rosinstall python-rosinstall-generator python-wstool build-essential ros-melodic-costmap-2d ros-melodic-social-navigation-layers ros-melodic-map-server
@@ -26,5 +27,8 @@ sudo apt install ./vs_code.deb
 rm vs_code.deb
 
 sudo apt install chrony
+sudo apt install chrony
 
-
+#create catkin workspace
+mkdir ~/catkin_nav && mkdir ~/catkin_nav/src 
+cd ~/catkin_nav && catkin_make
