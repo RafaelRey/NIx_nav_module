@@ -26,8 +26,16 @@ wget -O vs_code.deb https://go.microsoft.com/fwlink/?LinkID=760868
 sudo apt install ./vs_code.deb
 rm vs_code.deb
 
-sudo apt install chrony
-sudo apt install chrony
+#Navigation nuc will be the server
+sudo apt install -y chrony ntpdate
+#allow to run a local chrony server even if no global ntp server is used
+sudo echo "local stratum 10" >> /etc/chrony/chrony.conf
+#let users from any local subnet to connect to this machine
+sudo echo "allow 192.168.0.0/16" >> /etc/chrony/chrony.conf
+#enable chrony at startup
+sudo systemctl enable chrony
+#and
+sudo systemctl restart chrony
 
 #create catkin workspace
 mkdir ~/catkin_nav && mkdir ~/catkin_nav/src 
