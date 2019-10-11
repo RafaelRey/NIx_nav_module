@@ -19,7 +19,7 @@ echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 echo "alias cm='cd ~/catkin_nav && catkin_make'" >> ~/.bashrc
 source ~/.bashrc
 
-sudo apt install -y python-rosinstall python-rosinstall-generator python-wstool build-essential ros-melodic-costmap-2d ros-melodic-social-navigation-layers ros-melodic-map-server
+sudo apt install -y python-rosinstall python-rosinstall-generator python-wstool build-essential ros-melodic-costmap-2d ros-melodic-social-navigation-layers ros-melodic-map-server ros-melodic-usb-cam ros-melodic-amcl ros-melodic-pointcloud-to-laserscan ros-melodic-slam-gmapping ros-melodic-gmapping
 
 # visual code
 wget -O vs_code.deb https://go.microsoft.com/fwlink/?LinkID=760868
@@ -40,3 +40,17 @@ sudo systemctl restart chrony
 #create catkin workspace
 mkdir ~/catkin_nav && mkdir ~/catkin_nav/src 
 cd ~/catkin_nav && catkin_make
+
+#gsl library to allow people detection packges compile
+sudo apt-get install -y libgsl-dev
+
+#ifmetric to change the metric of the network interfaces in order to set the priorities
+sudo apt-get install -y ifmetric
+
+sudo apt-get install -y ros-melodic-octomap ros-melodic-octomap-server ros-melodic-octomap-ros ros-melodic-rviz-plugins 
+
+sudo apt-get install -y ros-melodic-twist-mux ros-melodic-joy
+
+sudo apt-get install -y vnc4server
+
+
