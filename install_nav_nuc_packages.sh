@@ -53,4 +53,5 @@ sudo apt-get install -y ros-melodic-twist-mux ros-melodic-joy
 
 sudo apt-get install -y vnc4server
 
+cd catkin_nav/src && git clone https://github.com/robotics-upo/flip_image.git
 
